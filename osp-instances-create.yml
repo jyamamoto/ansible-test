@@ -1,5 +1,5 @@
-- hosts: jumpbox
-#  become: yes
+- name: OSP instance create
+  hosts: all
   tasks:
 ##Create Fronend Instance
   - name: Create frontend instance
