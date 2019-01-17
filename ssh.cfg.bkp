@@ -1,0 +1,20 @@
+Host workstation
+  Hostname workstation-934e.rhpds.opentlc.com
+  User jyamamot
+
+Host 10.10.10.* 192.168.0.* *.rhpds.opentlc.com
+  User cloud-user
+  ProxyJump workstation
+
+Match User cloud-user
+  IdentityFile ~/.ssh/openstack.pem
+
+Match User jyamamot
+  IdentityFile ~/.ssh/id_rsa
+
+Host *
+  ForwardAgent yes
+  ControlMaster auto
+  ControlPath /tmp/%h-%r
+  ControlPersist 5m
+  StrictHostKeyChecking no
