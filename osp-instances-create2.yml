@@ -1,0 +1,12 @@
+- name: OSP instance create
+  hosts: all
+
+  tasks:
+  - name: Create instance
+    include_role:
+       name: osp-instances
+    vars:
+      instance_name: app1
+      group: apps
+      deployment: QA
+      security_group_name: apps

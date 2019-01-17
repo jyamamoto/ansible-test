@@ -1,0 +1,8 @@
+- name: OSP instance create
+  hosts: all
+  tasks:
+##Create Fronend Instance
+  - name: Create frontend instance
+    include_role:
+       name: osp-instances
+       vars_from: frontend.yaml

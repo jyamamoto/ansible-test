@@ -1,0 +1,12 @@
+- name: OSP instance create
+  hosts: all
+
+  tasks:
+  - name: Create instance
+    include_role:
+       name: osp-instances
+    vars:
+      instance_name: '{{ iname }}'
+      group: '{{ group }}'
+      deployment: '{{ deployment }}'
+      security_group_name: '{{ sg }}'
